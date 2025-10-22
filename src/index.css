@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 25% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 20% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 20% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 188 100% 50%;
+    --primary-foreground: 220 25% 6%;
+
+    --secondary: 270 70% 60%;
+    --secondary-foreground: 220 25% 6%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 188 100% 45%;
+    --accent-foreground: 220 25% 6%;
+
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 188 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom gaming theme colors */
+    --game-glow: 188 100% 50%;
+    --code-bg: 220 20% 8%;
+    --chat-bubble-user: 188 90% 15%;
+    --chat-bubble-ai: 270 50% 15%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(188 100% 50%), hsl(270 70% 60%));
+    --gradient-dark: linear-gradient(180deg, hsl(220 25% 8%), hsl(220 25% 4%));
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(188 100% 50% / 0.2), transparent 70%);
+    
+    /* Shadows */
+    --shadow-glow: 0 0 30px hsl(188 100% 50% / 0.3);
+    --shadow-card: 0 10px 40px hsl(220 25% 4% / 0.5);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    background: linear-gradient(180deg, hsl(220 25% 8%), hsl(220 25% 4%));
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .game-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .glass-effect {
+    background: hsl(220 20% 10% / 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(220 20% 18%);
+  }
+  
+  .code-font {
+    font-family: 'Monaco', 'Courier New', monospace;
+  }
+}
